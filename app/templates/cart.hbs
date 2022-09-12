@@ -11,15 +11,15 @@
   <section class="w-50 ml-auto text-right mb-5">
 <div class="row">
   <div class="col">Subtotal</div>
-  <div class="col"> {{this.subtotal}} </div>
+  <div class="col"> {{currency this.subtotal}} </div>
 </div>
 <div class="row">
   <div class="col">Tax</div>
-  <div class="col">{{this.tax}} </div>
+  <div class="col">{{currency this.tax}} </div>
 </div>
 <div class="row">
   <div class="col">Total</div>
-  <div class="col">{{this.total}} </div>
+  <div class="col">{{currency this.total}} </div>
 </div>
   </section>
   <button type="button" class="btn btn-success float-right">Check out</button>
