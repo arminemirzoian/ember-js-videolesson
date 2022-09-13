@@ -29,6 +29,5 @@ module('Integration | Component | product/details', function (hooks) {
     assert.dom('[data-test-current-price]').hasText('$30.00');
 
     await click('[data-test-color]');
-
   });
 });
