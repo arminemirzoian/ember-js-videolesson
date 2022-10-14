@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'ember-js',
+    modulePrefix: 'sample',
     environment,
     rootURL: '/',
     locationType: 'history',

@@ -1,0 +1,20 @@
+{{!-- template-lint-disable no-curly-component-invocation --}}
+{{!-- template-lint-disable no-implicit-this --}}
+<label for={{concat type "-" property}}>{{property}}</label>
+{{!-- template-lint-disable no-action --}}
+<input
+  class="u-full-width"
+  type={{type}}
+  id={{concat type "-" property}}
+  value={{get changeset property}}
+  oninput={{action (mut (get changeset property)) value="target.value"}}
+  onblur={{action validateProperty}}>
+{{#if (get changeset.error property)}}
+  <small>
+  	<ul>
+    	{{#each (get (get changeset.error property) "validation") as |message|}}
+    		<li>{{message}}</li>
+    	{{/each}}
+    </ul>
+  </small>
+{{/if}}

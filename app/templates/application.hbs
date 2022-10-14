@@ -1,2 +1,17 @@
+{{!-- template-lint-disable no-curly-component-invocation --}}
+{{!-- template-lint-disable no-implicit-this --}}
+{{marketing-copy reservedEmails=reservedEmails}}
+<hr>
 
-{{outlet}}
+{{!--
+  Try changing `type` to `child` and `validations` to `ChildValidations`
+--}}
+{{!-- template-lint-disable no-action --}}
+{{edit-user
+		user=model
+    validations=AdultValidations
+    type="adult"
+    save=(action "save")
+    reset=(action "reset")
+    validateProperty=(action "validateProperty")
+}}

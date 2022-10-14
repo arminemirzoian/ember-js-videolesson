@@ -1,0 +1,47 @@
+{{!-- template-lint-disable no-curly-component-invocation --}}
+{{!-- template-lint-disable no-implicit-this --}}
+<h4>{{type}} user: <code>{{user.firstName}} {{user.lastName}}, age {{user.age}} is a {{user.job}}</code></h4>
+{{!-- template-lint-disable no-with --}}
+{{#with (changeset user validations) as |changeset|}}
+
+  {{!-- template-lint-disable no-action --}}
+  {{validated-field
+      type="text"
+      changeset=changeset
+      property="firstName"
+      validateProperty=(action validateProperty changeset "firstName")
+  }}
+
+  {{validated-field
+      type="text"
+      changeset=changeset
+      property="lastName"
+      validateProperty=(action validateProperty changeset "lastName")
+  }}
+
+  {{validated-field
+      type="text"
+      changeset=changeset
+      property="email"
+      validateProperty=(action validateProperty changeset "email")
+  }}
+
+  {{validated-field
+      type="text"
+      changeset=changeset
+      property="job"
+      validateProperty=(action validateProperty changeset "job")
+  }}
+
+	{{validated-field
+      type="number"
+      changeset=changeset
+      property="age"
+      validateProperty=(action validateProperty changeset "age")
+  }}
+
+	<div class="row">
+  	<button disabled={{changeset.isInvalid}} class="button-primary" type="button" {{action save changeset}}>Save</button>
+  	<button type="button" {{action reset changeset}}>Reset</button>
+	</div>
+{{/with}}

@@ -1,0 +1,12 @@
+{{!-- template-lint-disable require-iframe-title --}}
+<iframe src="https://ghbtns.com/github-btn.html?user=DockYard&repo=ember-changeset&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+<iframe src="https://ghbtns.com/github-btn.html?user=DockYard&repo=ember-changeset-validations&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+<p><code>ember-changeset</code> and <code>ember-changeset-validations</code> provide an easy way to validate and set changes to your data. Unlike CP or observer based validations, you don't need to write anything special to prevent data from immediately becoming invalid. Validators are simply functions, no CPs or observers required. Try clearing the inputs below, entering invalid values, or even just focusing out. Email is an async validation.</p>
+<p>
+	Reserved emails: {{!-- template-lint-disable no-implicit-this --}}
+                  {{#each reservedEmails as |email|}}
+  <code>{{email}}</code>
+{{/each}}
+</p>
